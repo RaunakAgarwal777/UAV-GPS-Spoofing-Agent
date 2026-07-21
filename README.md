@@ -1,6 +1,6 @@
-# SentryLink V1
+# HappyLink V1
 
-**Explainable AI Agent for GPS Spoofing Detection in Autonomous UAV Communication Systems**
+**AI Agent for GPS Spoofing Detection in Autonomous UAV Communication Systems**
 
 A lightweight, modular proof-of-concept demonstrating AI agents, explainable AI (RAG),
 and swappable-module architecture for UAV cybersecurity. Not military software —
