@@ -4,7 +4,7 @@ from agent import SpoofingAnalysisAgent
 from data_loader import generate_sample_data
 
 st.set_page_config(page_title="HappyLink Prototype", layout="wide")
-st.title("🟢 HappyLink — GPS Spoofing Detection Agent")
+st.title("🟢 HappyLink — GPS Spoofing Detection Agent v0.01")
 st.caption("Modular AI-agent prototype: detect -> explain. One attack, one drone.")
 
 # ---------- UPGRADE 1: "How this works" explainer for non-technical viewers ----------
