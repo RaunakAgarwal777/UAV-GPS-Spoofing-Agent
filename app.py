@@ -3,12 +3,12 @@ import streamlit as st
 from agent import SpoofingAnalysisAgent
 from data_loader import generate_sample_data
 
-st.set_page_config(page_title="SentryLink Prototype", layout="wide")
-st.title("SentryLink — GPS Spoofing Detection Agent")
+st.set_page_config(page_title="HappyLink Prototype", layout="wide")
+st.title("HappyLink — GPS Spoofing Detection Agent")
 st.caption("Modular AI-agent prototype: detect -> explain. One attack, one drone.")
 
 # ---------- UPGRADE 1: "How this works" explainer for non-technical viewers ----------
-with st.expander("ℹ️ How this works (click to read — 30 seconds)", expanded=True):
+with st.expander("ℹ️ How Our Agent works (click to read — 30 seconds)", expanded=True):
     st.markdown("""
     **In plain English:**
     1. A drone constantly reports its speed two ways — once from **GPS** satellites,
@@ -46,7 +46,7 @@ if df is not None:
     st.subheader("Telemetry stream")
     st.dataframe(df, use_container_width=True)
 
-    if st.button("Run Analysis Agent"):
+    if st.button("Run Vulnerability Analysis Agent"):
         results = [agent.analyze(row) for _, row in df.iterrows()]
         out = pd.concat([df, pd.DataFrame(results)], axis=1)
 
@@ -58,7 +58,7 @@ if df is not None:
         col1, col2, col3 = st.columns(3)
         col1.metric("Total readings", n_total)
         col2.metric("Spoofing alerts", n_alerts)
-        status = "🔴 Attack detected" if n_alerts > 0 else "🟢 All clear"
+        status = "🔴 Attack detected! " if n_alerts > 0 else "🟢 All clear Mate!"
         col3.metric("System status", status)
 
         # ---------- UPGRADE 3: simple visual chart, not just a table ----------
