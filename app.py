@@ -61,11 +61,6 @@ if df is not None:
         status = "🔴 Attack detected! " if n_alerts > 0 else "🟢 All clear Mate!"
         col3.metric("System status", status)
 
-        # ---------- UPGRADE 3: simple visual chart, not just a table ----------
-        st.subheader("Normal vs. Suspicious readings")
-        chart_data = out["is_spoofed"].map({True: "Suspicious", False: "Normal"})
-        st.bar_chart(chart_data.value_counts())
-
         # ---------- UPGRADE 3 (cont.): expandable plain-English reason per row ----------
         st.subheader("Alert details")
         flagged = out[out["is_spoofed"]]
